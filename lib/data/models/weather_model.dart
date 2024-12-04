@@ -28,3 +28,28 @@ class WeatherModel {
     );
   }
 }
+
+class WeekWeatherModel {
+  final String iconurl;
+  final String condtion;
+  final double avgTemp;
+  final double maxTemp;
+  final double minTemp;
+
+  WeekWeatherModel(
+      {required this.iconurl,
+      required this.condtion,
+      required this.avgTemp,
+      required this.maxTemp,
+      required this.minTemp});
+
+  factory WeekWeatherModel.fromjson(json) {
+    return WeekWeatherModel(
+      iconurl: json['day']['condition']['icon'],
+      condtion: json['day']['condition']['text'],
+      avgTemp: json['day']['avgtemp_c'],
+      maxTemp: json['day']['maxtemp_c'],
+      minTemp: json['day']['mintemp_c'],
+    );
+  }
+}
