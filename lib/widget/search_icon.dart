@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weather/screen/search_screen.dart';
 
 class SearchIcon extends StatelessWidget {
   const SearchIcon({
@@ -10,7 +11,9 @@ class SearchIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, SearchScreen.id);
+      },
       icon: Icon(
         FontAwesomeIcons.searchengin,
         size: sizeIcon,
