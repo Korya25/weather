@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather/widget/weather_info/wether_week_row.dart';
+import 'package:weather/domain/presentation/widget/weather_info/wether_week_row.dart';
 
 class WeakWeatherCard extends StatelessWidget {
   const WeakWeatherCard({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather/widget/weather_info/temp_widget.dart';
+import 'package:weather/domain/presentation/widget/weather_info/temp_widget.dart';
 
 class MinAndMaxTemp extends StatelessWidget {
   const MinAndMaxTemp({

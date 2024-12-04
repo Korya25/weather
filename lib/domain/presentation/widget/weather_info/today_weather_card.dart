@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weather/widget/weather_info/citty_name_condtion_text.dart';
-import 'package:weather/widget/weather_info/image_weather.dart';
-import 'package:weather/widget/weather_info/min_max_temp.dart';
-import 'package:weather/widget/weather_info/temp_widget.dart';
+import 'package:weather/domain/presentation/widget/weather_info/citty_name_condtion_text.dart';
+import 'package:weather/domain/presentation/widget/weather_info/image_weather.dart';
+import 'package:weather/domain/presentation/widget/weather_info/min_max_temp.dart';
+import 'package:weather/domain/presentation/widget/weather_info/temp_widget.dart';
 
 class TodayWeatherCard extends StatelessWidget {
   const TodayWeatherCard({super.key});

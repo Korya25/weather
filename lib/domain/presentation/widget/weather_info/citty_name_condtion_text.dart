@@ -25,7 +25,6 @@ class CondtionOrNameCityText extends StatelessWidget {
       style: GoogleFonts.abel(
         fontSize: fontSize,
         fontWeight: FontWeight.bold,
-        color: Colors.yellowAccent,
       ),
     );
   }

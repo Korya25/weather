@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weather/widget/appbar/search_icon.dart';
-import 'package:weather/widget/appbar/toggele_theme.dart';
+import 'package:weather/domain/presentation/widget/appbar/search_icon.dart';
+import 'package:weather/domain/presentation/widget/appbar/toggele_theme.dart';
 
 class CutomAppBar extends StatelessWidget {
   const CutomAppBar({

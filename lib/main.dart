@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather/cibt/theme_cuibt.dart';
 import 'package:weather/constant/app_theme.dart';
-import 'package:weather/screen/hom_screen.dart';
-import 'package:weather/screen/search_screen.dart';
+import 'package:weather/domain/cuibt/theme_cuibt/theme_cuibt.dart';
+import 'package:weather/domain/presentation/screen/hom_screen.dart';
+import 'package:weather/domain/presentation/screen/search_screen.dart';
 
 void main() {
   runApp(

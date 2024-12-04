@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather/cibt/theme_cuibt.dart';
+import 'package:weather/domain/cibt/theme_cuibt.dart';
 
 class TogglThemebuttton extends StatelessWidget {
   const TogglThemebuttton({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/widget/weather_info/today_weather_card.dart';
-import 'package:weather/widget/weather_info/weak_weather_card.dart';
+import 'package:weather/domain/presentation/widget/weather_info/today_weather_card.dart';
+import 'package:weather/domain/presentation/widget/weather_info/weak_weather_card.dart';
 
 class DataInfo extends StatelessWidget {
   const DataInfo({super.key});
@@ -8,7 +8,7 @@ class DataInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
