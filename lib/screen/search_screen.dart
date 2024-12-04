@@ -25,11 +25,14 @@ class CustomTexField extends StatelessWidget {
       onSubmitted: (value) {
         Navigator.pop(context);
       },
-      decoration: const InputDecoration(
-          suffixIcon: Icon(Icons.search),
-          labelText: 'Search',
-          hintText: 'Enter city name',
-          border: OutlineInputBorder()),
+      decoration: InputDecoration(
+        suffixIcon: const Icon(Icons.search),
+        labelText: 'Search',
+        hintText: 'Enter city name',
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(7),
+        ),
+      ),
     );
   }
 }
