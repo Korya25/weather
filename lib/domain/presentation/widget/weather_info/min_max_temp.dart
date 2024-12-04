@@ -14,9 +14,10 @@ class MinAndMaxTemp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 100,
+      width: 90,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TempWidget(title: maxTemp, textStyle: textStyle),
           TempWidget(title: minTemp, textStyle: textStyle)

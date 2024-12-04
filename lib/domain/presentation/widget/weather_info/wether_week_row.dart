@@ -25,48 +25,49 @@ class WeakWeatherRow extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 2),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CondtionOrNameCityText(title: weatherModel.cityName),
-                const SizedBox(
-                  width: 10,
-                ),
-                ImageWeather(
-                  imagePath: 'http:${snapshot.data!.iconurl}',
-                  widthIcon: imagewidth,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                TempWidget(
-                  title: snapshot.data!.maxTemp.round().toString(),
-                  textStyle: GoogleFonts.abel(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: SizedBox(
+              width: 400,
+              child: Row(
+                children: [
+                  CondtionOrNameCityText(title: weatherModel.cityName),
+                  const SizedBox(
+                    width: 10,
                   ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                TempWidget(
-                  title: snapshot.data!.minTemp.round().toString(),
-                  textStyle: GoogleFonts.abel(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                  ImageWeather(
+                    imagePath: 'http:${snapshot.data!.iconurl}',
+                    widthIcon: imagewidth,
                   ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                CondtionOrNameCityText(
-                  fontSize: 20,
-                  title: snapshot.data!.condtion,
-                  endSubString: 11,
-                )
-              ],
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  TempWidget(
+                    title: snapshot.data!.maxTemp.round().toString(),
+                    textStyle: GoogleFonts.abel(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  TempWidget(
+                    title: snapshot.data!.minTemp.round().toString(),
+                    textStyle: GoogleFonts.abel(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CondtionOrNameCityText(
+                    fontSize: 20,
+                    title: snapshot.data!.condtion,
+                    endSubString: 13,
+                  )
+                ],
+              ),
             ),
           );
         } else {

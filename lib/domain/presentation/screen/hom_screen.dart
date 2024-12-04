@@ -11,7 +11,7 @@ class HomScreen extends StatelessWidget {
       appBar: AppBar(
         title: const CutomAppBar(),
       ),
-      body: const Futurebuilderdata(),
+      body: const FutureBuilderData(),
     );
   }
 }

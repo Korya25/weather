@@ -10,20 +10,22 @@ class DataInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-                height: 200,
-                child: TodayWeatherCard(
-                  weatherModel: weatherModel,
-                )),
-            const Divider(
-              thickness: 0.2,
-              endIndent: 70,
-              indent: 70,
+            TodayWeatherCard(
+              weatherModel: weatherModel,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Divider(
+                thickness: 1,
+                endIndent: 70,
+                indent: 70,
+              ),
             ),
             WeakWeatherCard(
               weatherModel: weatherModel,

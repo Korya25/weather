@@ -9,8 +9,7 @@ class WeakWeatherCard extends StatelessWidget {
   Widget build(BuildContext context) {
     const int index = 3;
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-      height: 300,
+      height: 200,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),

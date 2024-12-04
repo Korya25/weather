@@ -4,8 +4,8 @@ import 'package:weather/data/models/weather_model.dart';
 import 'package:weather/data/source/remote/weather_api.dart';
 import 'package:weather/domain/presentation/widget/weather_info/data_info.dart';
 
-class Futurebuilderdata extends StatelessWidget {
-  const Futurebuilderdata({super.key});
+class FutureBuilderData extends StatelessWidget {
+  const FutureBuilderData({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,21 +16,21 @@ class Futurebuilderdata extends StatelessWidget {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasData) {
-            return DataInfo(weatherModel: snapshot.data!);
-          } else if (snapshot.hasError) {
-            return const Center(
-              child: Text('Has Error'),
-            );
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
+        } else if (snapshot.hasError) {
+          return Center(
+            child: Text(
+              'Unable to connect to the Internet. Check your connection and try again. Error: ${snapshot.error}',
+              textAlign: TextAlign.center,
+            ),
+          );
+        } else if (snapshot.hasData) {
+          return DataInfo(weatherModel: snapshot.data!);
         } else {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: Text(
+              'No data available.',
+              textAlign: TextAlign.center,
+            ),
           );
         }
       },

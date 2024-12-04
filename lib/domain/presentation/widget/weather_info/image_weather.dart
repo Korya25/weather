@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ImageWeather extends StatelessWidget {
   const ImageWeather({
     super.key,
-    this.widthIcon = 40,
+    this.widthIcon = 50,
     required this.imagePath,
   });
   final double widthIcon;

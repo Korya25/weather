@@ -14,71 +14,60 @@ class TodayWeatherCard extends StatelessWidget {
   final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          height: 200,
-          width: 300,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+    return SizedBox(
+      height: 180,
+      child: Column(
+        children: [
+          CondtionOrNameCityText(
+            title: weatherModel.cityName,
+            endSubString: 50,
           ),
-          child: Column(
-            children: [
-              CondtionOrNameCityText(
-                title: weatherModel.cityName,
-                endSubString: 50,
-              ),
-              Text(
-                'Update at: ${weatherModel.lastUpdate.hour}:${weatherModel.lastUpdate.minute}',
-                style: GoogleFonts.abel(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+          Text(
+            'Update at: ${weatherModel.lastUpdate.hour}:${weatherModel.lastUpdate.minute}',
+            style: GoogleFonts.abel(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(
+            width: 300,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ImageWeather(
+                  imagePath: 'https:${weatherModel.iconurl}',
+                  widthIcon: 70,
                 ),
-              ),
-              const Spacer(
-                flex: 1,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ImageWeather(
-                    imagePath: 'https:${weatherModel.iconurl}',
+                const Spacer(
+                  flex: 1,
+                ),
+                TempWidget(
+                  title: weatherModel.avgTemp.round().toString(),
+                  textStyle: GoogleFonts.abel(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
                   ),
-                  const Spacer(
-                    flex: 1,
+                ),
+                const Spacer(
+                  flex: 1,
+                ),
+                MinAndMaxTemp(
+                  maxTemp: 'maxtemp: ${weatherModel.maxTemp.round()}',
+                  minTemp: 'mintemp: ${weatherModel.minTemp.round()}',
+                  textStyle: GoogleFonts.abel(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
                   ),
-                  TempWidget(
-                    title: weatherModel.avgTemp.round().toString(),
-                    textStyle: GoogleFonts.abel(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Spacer(
-                    flex: 1,
-                  ),
-                  MinAndMaxTemp(
-                    maxTemp: 'maxtemp: ${weatherModel.maxTemp.round()}',
-                    minTemp: 'mintemp: ${weatherModel.minTemp.round()}',
-                    textStyle: GoogleFonts.abel(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
-                ],
-              ),
-              const Spacer(
-                flex: 1,
-              ),
-              CondtionOrNameCityText(
-                endSubString: 18,
-                title: weatherModel.condtion,
-              ),
-            ],
+                )
+              ],
+            ),
           ),
-        ),
-      ],
+          CondtionOrNameCityText(
+            endSubString: 12,
+            title: weatherModel.condtion,
+          ),
+        ],
+      ),
     );
   }
 }
