@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather/widget/weather_info/temp_widget.dart';
 
 class MinAndMaxTemp extends StatelessWidget {
   const MinAndMaxTemp({
@@ -17,8 +18,8 @@ class MinAndMaxTemp extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(maxTemp, style: textStyle, maxLines: 1),
-          Text(minTemp, style: textStyle, maxLines: 1),
+          TempWidget(title: maxTemp, textStyle: textStyle),
+          TempWidget(title: minTemp, textStyle: textStyle)
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather/constant/style.dart';
-import 'package:weather/widget/search_icon.dart';
-import 'package:weather/widget/toggele_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:weather/widget/appbar/search_icon.dart';
+import 'package:weather/widget/appbar/toggele_theme.dart';
 
 class CutomAppBar extends StatelessWidget {
   const CutomAppBar({
@@ -15,7 +15,12 @@ class CutomAppBar extends StatelessWidget {
       children: [
         Text(
           'weather',
-          style: AppTextStyle.appBartitle,
+          style: GoogleFonts.abel(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1,
+            color: Colors.white,
+          ),
         ),
         const Spacer(
           flex: 1,

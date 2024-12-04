@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/widget/custom_app_bar.dart';
-import 'package:weather/widget/data_info.dart';
+import 'package:weather/widget/appbar/custom_app_bar.dart';
+import 'package:weather/widget/weather_info/data_info.dart';
 
 class HomScreen extends StatelessWidget {
   const HomScreen({super.key});
