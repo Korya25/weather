@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather/domain/presentation/widget/appbar/custom_app_bar.dart';
-import 'package:weather/domain/presentation/widget/weather_info/data_info.dart';
+import 'package:weather/domain/presentation/widget/futureBuilderdata.dart';
 
 class HomScreen extends StatelessWidget {
   const HomScreen({super.key});
@@ -11,7 +11,7 @@ class HomScreen extends StatelessWidget {
       appBar: AppBar(
         title: const CutomAppBar(),
       ),
-      body: const DataInfo(),
+      body: const Futurebuilderdata(),
     );
   }
 }

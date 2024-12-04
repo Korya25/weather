@@ -1,7 +1,7 @@
 class WeatherModel {
   final String cityName;
   final String iconurl;
-  final String lastUpdate;
+  final DateTime lastUpdate;
   final String condtion;
   final double avgTemp;
   final double maxTemp;
@@ -15,12 +15,12 @@ class WeatherModel {
       required this.avgTemp,
       required this.maxTemp,
       required this.minTemp});
-
+//DateTime.parse( json['current']['last_updated']),
   factory WeatherModel.fromjson(json) {
     return WeatherModel(
       cityName: json['location']['name'],
       iconurl: json['forecast']['forecastday'][0]['day']['condition']['icon'],
-      lastUpdate: json['current']['last_updated'],
+      lastUpdate: DateTime.parse(json['current']['last_updated']),
       condtion: json['forecast']['forecastday'][0]['day']['condition']['text'],
       avgTemp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
       maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],

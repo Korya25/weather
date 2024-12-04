@@ -11,7 +11,7 @@ class ImageWeather extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image(
-      image: AssetImage(imagePath),
+      image: NetworkImage(imagePath),
       fit: BoxFit.fill,
       width: widthIcon,
     );

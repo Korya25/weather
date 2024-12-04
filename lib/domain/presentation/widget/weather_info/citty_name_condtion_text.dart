@@ -6,7 +6,7 @@ class CondtionOrNameCityText extends StatelessWidget {
     super.key,
     required this.title,
     this.fontSize = 25,
-    this.endSubString = 12,
+    this.endSubString = 15,
   });
   final String title;
   final double fontSize;

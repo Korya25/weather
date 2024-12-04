@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weather/data/models/weather_model.dart';
 import 'package:weather/domain/presentation/widget/weather_info/citty_name_condtion_text.dart';
 import 'package:weather/domain/presentation/widget/weather_info/image_weather.dart';
 import 'package:weather/domain/presentation/widget/weather_info/min_max_temp.dart';
 import 'package:weather/domain/presentation/widget/weather_info/temp_widget.dart';
 
 class TodayWeatherCard extends StatelessWidget {
-  const TodayWeatherCard({super.key});
-
+  const TodayWeatherCard({
+    super.key,
+    required this.weatherModel,
+  });
+  final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -21,12 +25,12 @@ class TodayWeatherCard extends StatelessWidget {
           ),
           child: Column(
             children: [
-              const CondtionOrNameCityText(
-                title: 'Cairo',
+              CondtionOrNameCityText(
+                title: weatherModel.cityName,
                 endSubString: 50,
               ),
               Text(
-                'Last Update: 17:45',
+                'Update at: ${weatherModel.lastUpdate.hour}:${weatherModel.lastUpdate.minute}',
                 style: GoogleFonts.abel(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -38,14 +42,14 @@ class TodayWeatherCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const ImageWeather(
-                    imagePath: 'assets/sun.png',
+                  ImageWeather(
+                    imagePath: 'https:${weatherModel.iconurl}',
                   ),
                   const Spacer(
                     flex: 1,
                   ),
                   TempWidget(
-                    title: '17',
+                    title: weatherModel.avgTemp.round().toString(),
                     textStyle: GoogleFonts.abel(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
@@ -55,8 +59,8 @@ class TodayWeatherCard extends StatelessWidget {
                     flex: 1,
                   ),
                   MinAndMaxTemp(
-                    maxTemp: 'maxtemp:20',
-                    minTemp: 'mintemp: 12',
+                    maxTemp: 'maxtemp: ${weatherModel.maxTemp.round()}',
+                    minTemp: 'mintemp: ${weatherModel.minTemp.round()}',
                     textStyle: GoogleFonts.abel(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -67,9 +71,9 @@ class TodayWeatherCard extends StatelessWidget {
               const Spacer(
                 flex: 1,
               ),
-              const CondtionOrNameCityText(
+              CondtionOrNameCityText(
                 endSubString: 18,
-                title: 'Patchy rain nearby',
+                title: weatherModel.condtion,
               ),
             ],
           ),
