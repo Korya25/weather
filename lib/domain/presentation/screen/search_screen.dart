@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather/domain/cuibt/weather_cuibt/weather_cuibt.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -23,6 +25,9 @@ class CustomTexField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       onSubmitted: (value) {
+        if (value.isNotEmpty) {
+          BlocProvider.of<WeatherCuibt>(context).getdata(value);
+        }
         Navigator.pop(context);
       },
       decoration: InputDecoration(

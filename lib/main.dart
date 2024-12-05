@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather/constant/app_theme.dart';
 import 'package:weather/domain/cuibt/theme_cuibt/theme_cuibt.dart';
+import 'package:weather/domain/cuibt/weather_cuibt/weather_cuibt.dart';
 import 'package:weather/domain/presentation/screen/hom_screen.dart';
 import 'package:weather/domain/presentation/screen/search_screen.dart';
 
 void main() {
-  runApp(
+  runApp(MultiBlocProvider(providers: [
     BlocProvider(
       create: (context) => ThemeCuibt(),
-      child: const MyApp(),
     ),
-  );
+    BlocProvider(
+      create: (context) => WeatherCuibt(),
+    )
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

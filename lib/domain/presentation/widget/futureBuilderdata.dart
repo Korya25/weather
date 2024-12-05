@@ -5,12 +5,12 @@ import 'package:weather/data/source/remote/weather_api.dart';
 import 'package:weather/domain/presentation/widget/weather_info/data_info.dart';
 
 class FutureBuilderData extends StatelessWidget {
-  const FutureBuilderData({super.key});
-
+  const FutureBuilderData({super.key, required this.cityName});
+  final String cityName;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<WeatherModel>(
-      future: WeatherApi(Dio()).getdayWeather(cityName: 'tanta'),
+      future: WeatherApi(Dio()).getdayWeather(cityName: cityName),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
